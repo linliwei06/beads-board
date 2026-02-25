@@ -1,6 +1,6 @@
 {
   "name": "beads-board",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Terminal Kanban board for the beads (bd) issue tracker",
   "type": "commonjs",
   "main": "index.js",
@@ -11,7 +11,14 @@
     "start": "node index.js",
     "test": "node --test data.test.js"
   },
-  "keywords": ["beads", "bd", "kanban", "tui", "cli", "terminal"],
+  "keywords": [
+    "beads",
+    "bd",
+    "kanban",
+    "tui",
+    "cli",
+    "terminal"
+  ],
   "author": "linliwei06 <liwei.lin@gmail.com>",
   "license": "MIT",
   "dependencies": {
