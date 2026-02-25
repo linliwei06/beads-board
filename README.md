@@ -2,6 +2,8 @@
 
 A terminal Kanban board for the [beads (`bd`)](https://github.com/PG-Forest-Park/beads) issue tracker.
 
+View and navigate your issues instantly in the terminal — no browser, no web server, no build step. One command from anywhere in your project.
+
 ```
 ┌─ Open / Blocked ────────────────────┐ ┌─ Detail ──────────────────────────┐
 │ ◆  [P1][feature] FEAT-001 Auth flow │ │  FEAT-001  P1  feature  ready     │
