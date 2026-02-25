@@ -1,6 +1,14 @@
 #!/usr/bin/env node
+const path    = require('node:path')
 const blessed = require('blessed')
 const { fetchIssues } = require('./data')
+
+// ── CLI args ──────────────────────────────────────────────────────────────────
+const args     = process.argv.slice(2)
+const pathIdx  = args.findIndex(a => a === '--path' || a === '-p')
+const beadsRoot = pathIdx !== -1
+  ? path.resolve(args[pathIdx + 1])
+  : process.cwd()
 
 // ── Priority helpers ──────────────────────────────────────────────────────────
 const PRIORITY_COLOR = ['red', 'yellow', 'white', 'gray', 'gray']
@@ -230,7 +238,7 @@ function focusDetail() {
 function render() {
   applyLayout()
 
-  const data = fetchIssues()
+  const data = fetchIssues(beadsRoot)
   treeData = {
     open:       buildTree(data.open),
     inProgress: buildTree(data.inProgress),

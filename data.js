@@ -33,11 +33,12 @@ function groupByStatus(issues) {
  * Fetches issues for one status via bd CLI.
  * Uses execFileSync with a fixed args array — no shell, no injection risk.
  */
-function runBd(status) {
+function runBd(status, cwd) {
   try {
     const out = execFileSync('bd', ['list', '--json', `--status=${status}`], {
       encoding: 'utf8',
       stdio: ['pipe', 'pipe', 'pipe'],
+      cwd,
     })
     return JSON.parse(out).map(mapIssue)
   } catch {
@@ -48,12 +49,13 @@ function runBd(status) {
 /**
  * Fetches all issues from bd CLI and returns grouped display objects.
  * Closed issues capped at 10 (most recently updated first).
+ * @param {string} cwd - Directory containing .beads/ (defaults to process.cwd())
  */
-function fetchIssues() {
+function fetchIssues(cwd = process.cwd()) {
   return {
-    open: [...runBd('open'), ...runBd('blocked')],
-    inProgress: runBd('in_progress'),
-    closed: runBd('closed').slice(0, 10),
+    open: [...runBd('open', cwd), ...runBd('blocked', cwd)],
+    inProgress: runBd('in_progress', cwd),
+    closed: runBd('closed', cwd).slice(0, 10),
   }
 }
 

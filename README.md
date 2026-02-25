@@ -29,7 +29,14 @@ beads-board
 
 ## Usage
 
-Run `beads-board` from any directory that contains a `.beads/` folder (i.e. where you use `bd`).
+```bash
+# Run from the repo root (auto-detects .beads/ in current directory)
+beads-board
+
+# Or point to any repo from anywhere
+beads-board --path /path/to/your/repo
+beads-board -p ~/projects/myproject
+```
 
 The board auto-refreshes every 5 seconds.
 
