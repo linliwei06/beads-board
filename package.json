@@ -13,12 +13,19 @@
   },
   "keywords": [
     "beads",
+    "beads-board",
     "bd",
     "kanban",
     "tui",
     "cli",
-    "terminal"
+    "terminal",
+    "issue-tracker",
+    "task-manager"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linliwei06/beads-board"
+  },
   "author": "linliwei06 <liwei.lin@gmail.com>",
   "license": "MIT",
   "dependencies": {
