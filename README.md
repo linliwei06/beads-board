@@ -23,10 +23,7 @@ A terminal Kanban board for the [beads (`bd`)](https://github.com/PG-Forest-Park
 ## Install
 
 ```bash
-# GitHub (recommended for now)
-npm install -g github:linliwei06/beads-board
-
-# Run
+npm install -g beads-board
 beads-board
 ```
 
